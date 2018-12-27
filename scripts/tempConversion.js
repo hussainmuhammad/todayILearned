@@ -3,26 +3,27 @@ var celciusResult;
 var cTemp;
 var farenheitResult;
 var userInput;
+var temperature;
 
 window.prompt("Convert to Celcius or Farenheit?", userInput);
 
 if(userInput = "farenheit") {
-    convertToCelcius();
+    convertToFarenheit();
 }
 else if(userInput = "celcius"){
-    convertToFarenheit();
+    convertToCelcius();
 }
 
 function convertToCelcius(){
-    fTemp2 = window.prompt("Enter a number");
-    ftemp = fTemp2.parseInt();
+    fTemp = window.prompt("Enter a number", temperature);
     celciusResult = ((fTemp - 32) * 5) / 9;
-    document.getElementById("convertedTemp").value = celciusResult;
+    document.getElementById("convertedTemp").innerHTML = fTemp + ' degrees Farenheit is converted to ' +
+     celciusResult + ' degrees Celcius';
 }
 
 function convertToFarenheit() {
-    cTemp2 = window.prompt("Enter a number");
-    ctemp = cTemp2.parseInt();
+    cTemp = window.prompt("Enter a number", temperature);
     farenheitResult = ((cTemp *9 ) / 5) + 32;
-    document.getElementById("convertedTemp").value = farenheitResult;
+    document.getElementById("convertedTemp").innerHTML = cTemp + ' degrees Celcius is converted to ' +
+     farenheitResult + ' degrees Farenheit';
 }
